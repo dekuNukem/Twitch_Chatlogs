@@ -93,7 +93,7 @@ def filter_user_msg(tmi):
 	return '', ''
 
 class irc_bot(object):
-	def __init__(self, nickname, oauth, channel, host, port, timeout = 60, membership = 0, commands = 0, tags = 0):
+	def __init__(self, nickname, oauth, channel, host, port, timeout = 300, membership = 0, commands = 0, tags = 0):
 		self.NICK = nickname
 		self.AUTH = oauth
 		self.CHAT_CHANNEL = channel
@@ -134,7 +134,7 @@ class irc_bot(object):
 		raw_msg_list = self.recv_buffer.split("\r\n")
 		self.recv_buffer = raw_msg_list[-1]
 		for item in raw_msg_list[:-1]:
-			if "tmi.twitch.tv RECONNECT" in item and len(item) < 50:
+			if "PRIVMSG" not in item and "tmi.twitch.tv RECONNECT" in item:
 				err_msg = self.NICK + ": server requested RECONNECT"
 				print(err_msg, file=sys.stderr)
 				log_error(err_msg)
@@ -142,8 +142,7 @@ class irc_bot(object):
 				break
 			if "PRIVMSG" not in item and "PING :tmi.twitch.tv" in item:
 				self.sock.send(bytes("PONG tmi.twitch.tv\r\n", "UTF-8"))
-			if "PRIVMSG" not in item and "tmi.twitch.tv" in item and ("failed" in item.lower() or "error" in item.lower()):
-				print(item, file=sys.stderr)
+			if "PRIVMSG" not in item and "tmi.twitch.tv" in item and "failed" in item.lower():
 				print(self.NICK + ": Login failed! check your username and oauth", file=sys.stderr)
 				exit()
 			ret.insert(0, item)

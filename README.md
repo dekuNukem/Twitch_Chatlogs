@@ -2,17 +2,17 @@ Chat logs of a number of past Twitch events, as well as the chat logger itself. 
 
 ## Included chat logs
 
-* AGDQ2015
-* SGDQ2015
-* AGDQ2016
-* SGDQ2016
-* AGDQ2017
-* Bob Ross marathon
+* [AGDQ2015](https://drive.google.com/file/d/0ByqN9QHBVEsvMjNwd1V6SmtLSFk/view?usp=sharing)
+* [SGDQ2015](https://drive.google.com/file/d/0ByqN9QHBVEsvNUpuay0zbEZJMm8/view?usp=sharing)
+* [AGDQ2016](https://drive.google.com/file/d/0ByqN9QHBVEsvb0hVS1IzQTdkdW8/view?usp=sharing)
+* [SGDQ2016](https://drive.google.com/file/d/0ByqN9QHBVEsvdTJXdHdJNHR1aTQ/view?usp=sharing)
+* [AGDQ2017](https://drive.google.com/file/d/0ByqN9QHBVEsvSGhsQU9aMndxZWM/view?usp=sharing)
+* [Bob Ross marathon](https://drive.google.com/file/d/0ByqN9QHBVEsvZ2NEZ1R5VWsxSGs/view?usp=sharing)
 * Nintendo Switch introduction
 * [Mister Rogers' Neighborhood](https://drive.google.com/file/d/0ByqN9QHBVEsvbUpoVjd5VXBUX0U/view?usp=sharing)
 
-## Usage
+## Chatlog Parser
 
-* go to [https://twitchapps.com/tmi/](https://twitchapps.com/tmi/) and get your oauth
-* put your username and oauth into the beginning of `comment_logger.py`
-* `python3 comment_logger.py channel`
+[click me](./misc/parser.py)
+
+`python3 parser.py filename`
