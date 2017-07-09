@@ -10,6 +10,7 @@ Chat logs of a number of past Twitch events, as well as the chat logger itself. 
 * [Bob Ross marathon](https://drive.google.com/file/d/0ByqN9QHBVEsvZ2NEZ1R5VWsxSGs/view?usp=sharing)
 * Nintendo Switch introduction
 * [Mister Rogers' Neighborhood](https://drive.google.com/file/d/0ByqN9QHBVEsvbUpoVjd5VXBUX0U/view?usp=sharing)
+* [SGDQ2017](./SGDQ2017)
 
 ## Chatlog Parser
 

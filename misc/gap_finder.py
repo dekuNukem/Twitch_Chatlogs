@@ -20,12 +20,9 @@ def read_chatlog(chatlog_line):
     try:
         line_split = chatlog_line.split(' ', 1)
         timestamp = parse_ts(line_split[0])
-        message = line_split[1].split(": ", 1)
-        user = message[0].lower()
-        comment = message[1].rstrip("\n").rstrip("\r")
     except Exception as e:
-        return '','',''
-    return timestamp, user, comment
+        return None
+    return timestamp
 
 if len(sys.argv) != 2:
     print("usage: parser.py filename")
@@ -38,8 +35,9 @@ while 1:
     this_line = input_file.readline()
     if this_line == "":
         break
-    this_timestamp, username, message = read_chatlog(this_line)
-    if username == "":
+    this_timestamp = read_chatlog(this_line)
+    if this_timestamp == None:
+        print(this_line)
         continue
     gap = int(this_timestamp - last_timestamp)
     if(gap > 300):

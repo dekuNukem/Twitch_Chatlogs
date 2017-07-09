@@ -1,1 +1,1 @@
-rsync -r pi@192.168.0.103:~/Desktop/new_logger ./
+rsync -rv pi@192.168.0.101:~/Desktop/batch_logger/comment_log/gamesdonequick.txt ./
